@@ -12,7 +12,6 @@ st.write("write") # 表示
 st.markdown("# markdown") # マークダウンで表示
 st.text("text") # テキスト表示
 
-'''kokokara
 openai.api_key = os.getenv("OPENAI_API_KEY")
 time_limit = 60  # application time limit.
 
@@ -35,6 +34,7 @@ def CustomChatGPT(user_input, conversation_history):
     messages.append({"role": "assistant", "content": ChatGPT_reply})
 
     return conversation_history
+
 
 def close_streamlit_after_delay():
     threading.Timer(time_limit, lambda: os.kill(os.getpid(), signal.SIGINT)).start()
@@ -93,4 +93,3 @@ def main():
 if __name__ == "__main__":
     main()
     
-'''
