@@ -13,7 +13,7 @@ st.markdown("# markdown") # マークダウンで表示
 st.text("text") # テキスト表示
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-time_limit = 20  # application time limit.
+time_limit = 60  # application time limit.
 
 # 初期のシステムメッセージ
 messages = [{"role": "system", "content": "You are a "}]
@@ -53,22 +53,22 @@ def main():
             st.session_state.conversation_history = CustomChatGPT(user_input, st.session_state.conversation_history)
 
     # CSSを使用して高さを制限してスクロール可能にする
-#    st.markdown("""
-#        <style>
-#            .scrollable-container {
-#                max-height: 300px;
-#                overflow-y: auto;
-#                padding: 10px;
-#                border: 1px solid #000; /* この部分を変更 */
-#                border-radius: 4px;
-#                margin-top: 10px;
-#            }
-#            .stTextInput input {
-#                border: 1px solid #000 !important;
-#            }
-#            }
-#        </style>
-#    """, unsafe_allow_html=True)
+    st.markdown("""
+        <style>
+            .scrollable-container {
+                max-height: 300px;
+                overflow-y: auto;
+                padding: 10px;
+                border: 1px solid #000; /* この部分を変更 */
+                border-radius: 4px;
+                margin-top: 10px;
+            }
+            .stTextInput input {
+                border: 1px solid #000 !important;
+            }
+            }
+        </style>
+    """, unsafe_allow_html=True)
 
     # 会話履歴を表示
     chat_content = ""
@@ -81,12 +81,12 @@ def main():
     st.markdown(f"<div class='scrollable-container' id='chatbox'>{chat_content}</div>", unsafe_allow_html=True)
 
     # スクロールボックスを最下部にスクロールするJavaScript
-#    st.markdown("""
-#        <script>
-#            let chatbox = document.getElementById('chatbox');
-#            chatbox.scrollTop = chatbox.scrollHeight;
-#        </script>
-#    """, unsafe_allow_html=True)
+    st.markdown("""
+        <script>
+            let chatbox = document.getElementById('chatbox');
+            chatbox.scrollTop = chatbox.scrollHeight;
+        </script>
+    """, unsafe_allow_html=True)
 
     close_streamlit_after_delay()
 
