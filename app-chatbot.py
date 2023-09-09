@@ -1,10 +1,10 @@
 import streamlit as st
-'''
+
 import openai
 import os
 import threading
 import signal
-'''
+
 
 st.title("TITLE") # タイトル
 st.header("header") # ヘッダー
@@ -12,7 +12,7 @@ st.write("write") # 表示
 st.markdown("# markdown") # マークダウンで表示
 st.text("text") # テキスト表示
 
-'''
+'''kokokara
 openai.api_key = os.getenv("OPENAI_API_KEY")
 time_limit = 60  # application time limit.
 
