@@ -3,7 +3,7 @@ import streamlit as st
 #import openai
 import os
 import threading
-import signal
+#import signal
 
 
 st.title("TITLE NEW") # タイトル
@@ -37,15 +37,18 @@ def CustomChatGPT(user_input, conversation_history):
     return conversation_history
 '''
 
+def shutdown():
+    os._exit(0)
+
 def close_streamlit_after_delay():
-    threading.Timer(time_limit, lambda: os.kill(os.getpid(), signal.SIGINT)).start()
+    threading.Timer(time_limit, shutdown).start()
 
 def main():
     st.title("ono-piano.com")
 
     # Streamlitのセッション状態の初期設定
-    if 'conversation_history' not in st.session_state:
-        st.session_state.conversation_history = []
+#    if 'conversation_history' not in st.session_state:
+#        st.session_state.conversation_history = []
 
 #    with st.form("ChatForm", clear_on_submit=True):
 #        user_input = st.text_input("Please enter your message:")
