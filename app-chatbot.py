@@ -6,7 +6,7 @@ import threading
 import signal
 
 
-st.title("TITLE") # タイトル
+st.title("TITLE NEW") # タイトル
 st.header("header") # ヘッダー
 st.write("write") # 表示
 st.markdown("# markdown") # マークダウンで表示
