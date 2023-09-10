@@ -13,7 +13,7 @@ def close_streamlit_after_delay():
 def main():
     st.title("TEST")
 
-    close_streamlit_after_delay()
+#    close_streamlit_after_delay()
 
 if __name__ == "__main__":
     main()
